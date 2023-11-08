@@ -1,0 +1,303 @@
+@charset "UTF-8";
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+@media only screen and (max-width: 768px) {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+/* MES MIXINS */
+/* FIN MES MIXINS */
+.espace {
+  margin-top: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 3;
+  top: 2%;
+}
+@media only screen and (max-width: 768px) {
+  .menu-container {
+    width: 100%;
+  }
+}
+
+.nav-principale {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2%;
+  background-color: #FBFCFF;
+  z-index: 2;
+  border-bottom: 1px solid #d9dfed;
+  transition: background-color 1s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale {
+    padding: 0.5em 2em;
+    flex-direction: row;
+    height: 70px;
+    gap: 10px;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+.nav-principale img {
+  padding-left: 11%;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 37px;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale img {
+    width: 140px;
+  }
+}
+
+.separateur {
+  border-right: 2px solid black;
+  height: 80px;
+  margin-left: 20px;
+}
+
+.nav-principale ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale ul {
+    display: none;
+    margin-left: 0px;
+  }
+}
+
+.nav-principale li.right1 {
+  margin-left: 1.5rem;
+  margin-right: 2em;
+  padding: 10px;
+  transition: 0.4s ease;
+}
+.nav-principale li.right1:hover {
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: black;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 300;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale a {
+    font-size: 14px;
+  }
+}
+
+/* bouton header */
+.right {
+  margin-left: 8.5rem;
+}
+.right a {
+  background-color: black;
+  padding: 7px 30px;
+  color: white !important;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+.right a:hover {
+  background-color: #36b535;
+}
+
+/* FIN bouton header */
+@media only screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-menu.show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    margin-top: 370px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(217, 223, 237, 0.4392156863);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 7px;
+  }
+  .right {
+    display: flex;
+    margin: 0rem 0.5rem;
+  }
+}
+/* bouton DARKMODE */
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  /* permet de cacher le carré dégeulasse */
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px; /* cache le texte du label */
+  width: 60px;
+  height: 26px;
+  background: none;
+  border: 1px solid black;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  rotate: 90deg;
+  margin-left: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  label {
+    rotate: none;
+  }
+}
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 90px;
+  transition: 0.4s;
+}
+
+input:checked + label {
+  background: #fff;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 50px; /* permet de faire l'effet sur la boule de couleur quand tu clique dessus et qu'elle se déforme */
+}
+
+/* FIN bouton DARKMODE */
+/* SECTION 2 */
+.section2 {
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  overflow: hidden;
+}
+.section2 .titre-accueil {
+  border: 1px solid blue;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section2 .titre-accueil .colored-title {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section2 .titre-accueil .colored-title h1 {
+  font-family: "inter";
+  font-size: 45px;
+  font-weight: 400;
+}
+.section2 .titre-accueil .colored-title h1 .colored-1 {
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.section2 .titre-accueil .colored-title h1 .colored-2 {
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.section2 .titre-accueil .colored-title h1 .colored-3 {
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.section2 .titre-accueil .texte-chapeau {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "inter";
+  letter-spacing: 3px;
+}
+.section2 .grosse-image {
+  margin-bottom: -100px;
+}
+.section2 .grosse-image .grosse-image img {
+  width: 1000px;
+}/*# sourceMappingURL=style.css.map */
