@@ -262,13 +262,13 @@ label:active:after {
 
 .section2{
   border: 1px solid red;
-  height: 100vh;
+  height: 900px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  gap: 8%;
   overflow: hidden;
 
   .titre-accueil{
@@ -277,6 +277,8 @@ label:active:after {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: -40px;
+    
 
     .colored-title{
       border: 1px solid red;
@@ -334,11 +336,13 @@ label:active:after {
 
   .grosse-image{
     margin-bottom: -100px;
+    border: 1px solid chartreuse;
   
-    .grosse-image img{
-      width: 1000px;
-    }
+  .grosse-image img{
+    width: 700px;
   }
+  }
+
 
 }
 
