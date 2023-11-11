@@ -474,7 +474,6 @@ label:active:after {
   .section4 .global1 .carousel-items {
     width: 100%;
     padding: 2em 4em;
-    border: 1px solid red;
     gap: 10px;
   }
 }
@@ -494,10 +493,12 @@ label:active:after {
   padding: 2em 2em;
   background-color: #F7FBFC;
   transition: transform 0.8s ease-in-out;
-  border: 2px solid transparent; /* Couleur de la bordure initiale (transparente) */
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
   -o-border-image: linear-gradient(95deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
      border-image: linear-gradient(95deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
-  border-image-slice: 1; /* Pour rendre le dégradé visible sur toute la bordure */
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
 }
 @media only screen and (max-width: 768px) {
   .section4 .global1 .card {
@@ -540,4 +541,126 @@ label:active:after {
   margin-left: 1rem;
   scroll-snap-type: x mandatory;
   scroll-snap-align: start;
+}
+
+.section5 {
+  height: 850px;
+  width: 100%;
+  border: 1px solid red;
+  background-image: url(../asset/accueil/fond.webp);
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .section5 {
+    height: 700px;
+    flex-direction: column;
+  }
+}
+.section5 .tube-loic {
+  width: 200px;
+  height: 600px;
+  border: 2px solid magenta;
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-loic {
+    width: 100%;
+    height: 300px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.section5 .tube-loic .espace-vide1 {
+  width: 100px;
+  height: 300px;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-loic .espace-vide1 {
+    display: none;
+  }
+}
+.section5 .tube-loic .legende1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-loic .legende1 {
+    margin-top: 0px;
+  }
+}
+.section5 .tube-loic .legende1 p,
+.section5 .tube-loic .legende1 h4 {
+  font-size: 15px;
+  font-family: "inter";
+  text-align: center;
+}
+.section5 .tube-loic img {
+  width: 170px;
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-loic img {
+    margin-top: 0px;
+  }
+}
+.section5 .tube-thibaud {
+  width: 200px;
+  height: 600px;
+  border: 2px solid green;
+  margin-top: auto;
+  background: linear-gradient(130deg, #ED1AFF -26.83%, rgba(255, 208, 44, 0.92) 117.69%);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-thibaud {
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+    border-top-right-radius: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.section5 .tube-thibaud .legende2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section5 .tube-thibaud .legende2 p,
+.section5 .tube-thibaud .legende2 h4 {
+  font-size: 15px;
+  font-family: "inter";
+  text-align: center;
+}
+.section5 .tube-thibaud img {
+  width: 170px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .section5 .tube-thibaud img {
+    margin-bottom: 13px;
+  }
 }/*# sourceMappingURL=style.css.map */
