@@ -1,0 +1,982 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: 768px) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+.espace {
+  margin-top: 500px;
+}
+
+/* MES MIXINS */
+
+
+@mixin fond-rose() {
+  background: linear-gradient(130deg, #ED1AFF -26.83%, rgba(255, 208, 44, 0.92) 117.69%);
+}
+
+@mixin fond-bleu() {
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+}
+
+@mixin fond-vert() {
+  background: var(--vert, linear-gradient(103deg, #FFE81A -66.54%, rgba(60, 255, 44, 0.92) 156.2%));
+}
+
+
+/* FIN MES MIXINS */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 3;
+  top: 2%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.nav-principale {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2%;
+  background-color: #FBFCFF;
+  z-index: 2;
+  border-bottom: 1px solid #d9dfed;
+  transition: background-color 1s ease-in-out;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0.5em 2em;
+    flex-direction: row;
+    height: 70px;
+    gap: 10px;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+.nav-principale img {
+  padding-left: 11%;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 37px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100px;
+    height: 16px;
+    margin-left: 60px;
+  }
+}
+
+.separateur {
+  border-right: 2px solid black;
+  height: 80px;
+  margin-left: 20px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
+}
+
+
+
+.nav-principale ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+    margin-left: 0px;
+  }
+}
+
+.nav-principale li.right1 {
+  margin-left: 1.5rem;
+  margin-right: 2em;
+  padding: 10px;
+  transition: 0.4s ease;
+
+  &:hover {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 300;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+
+
+/* bouton header */
+
+.right {
+  margin-left: 8.5rem;
+
+  a {
+    background-color: black;
+    padding: 7px 30px;
+    color: white !important;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+
+    &:hover {
+      background-color: #36b535;
+    }
+  }
+}
+
+/* FIN bouton header */
+
+@media only screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-menu.show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    margin-top: 370px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9dfed70;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 7px;
+  }
+
+  .right {
+    display: flex;
+    margin: 0rem 0.5rem;
+  }
+}
+
+/* bouton DARKMODE */
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  /* permet de cacher le carré dégeulasse */
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  /* cache le texte du label */
+  width: 60px;
+  height: 26px;
+  background: none;
+  border: 1px solid black;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  rotate: 90deg;
+  margin-left: 1.5rem;
+
+  @media only screen and (max-width: 768px) {
+    rotate: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border-radius: 90px;
+    transition: 0.4s;
+  }
+}
+
+input:checked+label {
+  background: #fff;
+}
+
+input:checked+label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 50px;
+  /* permet de faire l'effet sur la boule de couleur quand tu clique dessus et qu'elle se déforme */
+}
+
+/* FIN bouton DARKMODE */
+
+/* SECTION 2 */
+
+.section2 {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+  overflow: hidden;
+
+  @media only screen and (max-width: 768px) {}
+
+
+  .titre-accueil {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: -190px;
+    }
+
+
+    .colored-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-family: 'inter';
+        font-size: 30px;
+        font-weight: 800;
+
+
+        @media only screen and (max-width: 768px) {
+          font-size: 25px;
+        }
+
+        .colored-1 {
+          background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 800;
+
+        }
+
+        .colored-2 {
+          background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 800;
+        }
+
+        .colored-3 {
+          background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 800;
+        }
+
+
+      }
+
+    }
+
+    .texte-chapeau {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'oxygen';
+      font-size: 15px;
+      font-weight: 100;
+      letter-spacing: 3px;
+      margin-top: 50px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+    }
+
+  }
+
+  .grosse-image {
+    margin-bottom: -100px;
+
+
+
+    img {
+      width: 1100px;
+      transition: 0.7s ease-in-out;
+
+      @media only screen and (max-width: 768px) {
+        width: 300px;
+      }
+
+      &:hover {
+        transform: scale(1.04);
+        transition: 0.7s ease-in-out;
+      }
+    }
+  }
+
+}
+
+.section3 {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F7FBFC;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    height: 700px;
+    margin-top: -145px;
+  }
+
+
+  .bandeau {
+    width: 90%;
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    gap: 130px;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      height: 600px;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .logo1 {
+      width: 110px;
+      height: 110px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+
+      @media only screen and (max-width: 768px) {
+        width: 80px;
+        height: 80px;
+      }
+
+      &:hover {
+        background-color: #F8F8F8;
+        transform: scale(0.9);
+        transition: 0.3s ease;
+      }
+
+      img {
+        width: 70px;
+
+        @media only screen and (max-width: 768px) {
+          width: 50px;
+        }
+      }
+
+    }
+  }
+}
+
+.section4 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 700px;
+  }
+
+  .global1 {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+
+    @media only screen and (max-width: 768px) {
+      height: 600px;
+    }
+
+    .titre-accroche {
+      gap: 35px;
+      width: 60%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      .gros-titre {
+
+        @media only screen and (max-width: 768px) {
+          width: 350px;
+        }
+
+
+        h1 {
+          font-family: "inter";
+          font-size: 30px;
+          font-weight: 800;
+
+          .gros-titre-span {
+            background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+
+      .chapeau2 {
+        font-family: "oxygen";
+        font-size: 14px;
+        font-weight: 300;
+
+        @media only screen and (max-width: 768px) {
+          width: 350px;
+          font-size: 11px;
+        }
+
+      }
+    }
+
+
+    .carousel-items {
+      display: flex;
+      overflow-x: scroll;
+      padding: 2rem 5em;
+      height: auto;
+      list-style: none;
+      gap: 50px;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        padding: 2em 4em;
+        gap: 10px;
+      }
+    }
+
+    .carousel-item ul {
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+
+    .carousel-item li {
+      display: inline-block;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 300px;
+      gap: 9%;
+      padding: 2em 2em;
+      background-color: #F7FBFC;
+      transition: transform 0.8s ease-in-out;
+      border: 2px solid transparent;
+      /* Couleur de la bordure initiale (transparente) */
+      border-image: linear-gradient(95deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+      border-image-slice: 1;
+      /* Pour rendre le dégradé visible sur toute la bordure */
+
+      @media only screen and (max-width: 768px) {
+        width: 75%;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+
+    .card:hover {
+      outline: 1px solid white;
+      transform: scale(1.1);
+    }
+
+    .card h2 {
+      font-family: 'inter';
+      color: #000;
+      font-size: 22px;
+      letter-spacing: 3px;
+      font-weight: 800;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 19px;
+      }
+
+    }
+
+    .card p {
+      font-family: 'inter';
+      color: #999999;
+      font-size: 12px;
+      line-height: 170%;
+      letter-spacing: 1px;
+    }
+
+    .card img {
+      width: 100%;
+    }
+
+    .carousel-item {
+      margin-left: 1rem;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 450px;
+      margin-left: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-align: start;
+    }
+  }
+}
+
+.section5 {
+  height: 850px;
+  width: 100%;
+  background-image: url(../asset/accueil/fond.webp);
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 700px;
+    flex-direction: column;
+  }
+
+  .tube-loic {
+    width: 200px;
+    height: 600px;
+    @include fond-bleu;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      height: 300px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 300px;
+      border-bottom-right-radius: 300px;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .espace-vide1 {
+      width: 100px;
+      height: 300px;
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .legende1 {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      gap: 10px;
+
+      @media only screen and (max-width: 768px) {
+        margin-top: 0px;
+      }
+
+      p,
+      h4 {
+        font-size: 15px;
+        font-family: 'inter';
+        text-align: center;
+
+      }
+    }
+
+    img {
+      width: 170px;
+      margin-top: auto;
+      margin-bottom: 15px;
+
+      @media only screen and (max-width: 768px) {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .tube-thibaud {
+    width: 200px;
+    height: 600px;
+    margin-top: auto;
+    @include fond-rose;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      height: 300px;
+      border-top-left-radius: 300px;
+      border-bottom-left-radius: 300px;
+      border-top-right-radius: 0px;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .legende2 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+
+      p,
+      h4 {
+        font-size: 15px;
+        font-family: 'inter';
+        text-align: center;
+
+      }
+    }
+
+    img {
+      width: 170px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+
+      @media only screen and (max-width: 768px) {
+        margin-bottom: 13px;
+
+      }
+
+    }
+  }
+}
+
+
+.section6 {
+  width: 100%;
+  height: 115vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 90vh;
+    margin-top: 70px;
+  }
+
+  .global2 {
+    width: 90%;
+    height: 105vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      height: 90vh;
+    }
+
+    .titre-valeur {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 60px;
+
+      h1 {
+        font-family: 'inter';
+        font-weight: 900;
+        color: #030303;
+
+        span {
+          background: linear-gradient(96deg, #ED1AFF 1.69%, rgba(255, 208, 44, 0.92) 90.11%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+    }
+
+    .interieur {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0px;
+      }
+
+
+
+      .liste {
+        width: 35%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        .choix1,
+        .choix2,
+        .choix3,
+        .choix4,
+        .choix5,
+        .choix6 {
+          border: 2px solid #DDEAF0;
+          width: 60%;
+          height: 70px;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          align-items: center;
+          transition: 0.3s ease-in-out;
+
+
+
+          &:hover {
+            background-color: #DDEAF030;
+            cursor: pointer;
+          }
+
+
+          p {
+            font-family: 'inter';
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .fond-couleur {
+            background-color: #DDEAF0;
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            margin-left: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .spawn-image {
+        width: 65%;
+        height: 85%;
+        @include fond-rose();
+        display: flex;
+        border-radius: 15px 15px 30px 15px;
+
+        @media only screen and (max-width: 768px) {
+          display: none;
+        }
+
+        .lieu-image {
+          width: 85%;
+          height: 85%;
+          margin-top: auto;
+          margin-left: auto;
+          border-radius: 20px 0px 0px 0px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.parallax-banner {
+  height: 50vh;
+  background-image: url(../asset/accueil/framework.svg);
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: #DDEAF030;
+
+  @media only screen and (max-width: 768px) {
+    height: 20vh;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    h1 {
+      font-family: 'inter';
+      font-size: 30px;
+      font-weight: 700;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+}
+
+.section7 {
+  width: 100%;
+  height: 80vh;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 70px;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
+
+  .relation {
+    width: 70%;
+    border: 2px solid blue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media only screen and (max-width: 768px) {
+      width: 85%;
+    }
+
+    h1 {
+      font-family: 'inter';
+      font-weight: 800;
+      font-size: 30px;
+
+
+      span {
+        background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+    }
+
+    p {
+      font-family: 'inter';
+      font-weight: 400;
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .world-image{
+    width: 100%;
+    height: 90%;
+    border: 2px solid red;
+    overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+      height: auto;
+    }
+
+    img{
+      width: 1400px;
+
+      @media only screen and (max-width: 768px) {
+        width: 430px;
+      }
+    }
+  }
+}
