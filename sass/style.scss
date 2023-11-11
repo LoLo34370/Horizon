@@ -607,7 +607,6 @@ label:active:after {
 .section5 {
   height: 850px;
   width: 100%;
-  border: 1px solid red;
   background-image: url(../asset/accueil/fond.webp);
   background-size: cover;
   overflow: hidden;
@@ -624,7 +623,6 @@ label:active:after {
   .tube-loic {
     width: 200px;
     height: 600px;
-    border: 2px solid magenta;
     @include fond-bleu;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -685,7 +683,6 @@ label:active:after {
   .tube-thibaud {
     width: 200px;
     height: 600px;
-    border: 2px solid green;
     margin-top: auto;
     @include fond-rose;
     border-top-left-radius: 100px;
@@ -726,10 +723,260 @@ label:active:after {
       margin-bottom: 30px;
 
       @media only screen and (max-width: 768px) {
-       margin-bottom: 13px;
-  
+        margin-bottom: 13px;
+
       }
 
+    }
+  }
+}
+
+
+.section6 {
+  width: 100%;
+  height: 115vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 90vh;
+    margin-top: 70px;
+  }
+
+  .global2 {
+    width: 90%;
+    height: 105vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      height: 90vh;
+    }
+
+    .titre-valeur {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 60px;
+
+      h1 {
+        font-family: 'inter';
+        font-weight: 900;
+        color: #030303;
+
+        span {
+          background: linear-gradient(96deg, #ED1AFF 1.69%, rgba(255, 208, 44, 0.92) 90.11%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+    }
+
+    .interieur {
+      width: 100%;
+      height: 90%;
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0px;
+      }
+
+
+
+      .liste {
+        width: 35%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        .choix1,
+        .choix2,
+        .choix3,
+        .choix4,
+        .choix5,
+        .choix6 {
+          border: 2px solid #DDEAF0;
+          width: 60%;
+          height: 70px;
+          border-radius: 8px;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          align-items: center;
+          transition: 0.3s ease-in-out;
+
+
+
+          &:hover {
+            background-color: #DDEAF030;
+            cursor: pointer;
+          }
+
+
+          p {
+            font-family: 'inter';
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .fond-couleur {
+            background-color: #DDEAF0;
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            margin-left: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .spawn-image {
+        width: 65%;
+        height: 85%;
+        @include fond-rose();
+        display: flex;
+        border-radius: 15px 15px 30px 15px;
+
+        @media only screen and (max-width: 768px) {
+          display: none;
+        }
+
+        .lieu-image {
+          width: 85%;
+          height: 85%;
+          margin-top: auto;
+          margin-left: auto;
+          border-radius: 20px 0px 0px 0px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.parallax-banner {
+  height: 50vh;
+  background-image: url(../asset/accueil/framework.svg);
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: #DDEAF030;
+
+  @media only screen and (max-width: 768px) {
+    height: 20vh;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    h1 {
+      font-family: 'inter';
+      font-size: 30px;
+      font-weight: 700;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+}
+
+.section7 {
+  width: 100%;
+  height: 80vh;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 70px;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
+
+  .relation {
+    width: 70%;
+    border: 2px solid blue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media only screen and (max-width: 768px) {
+      width: 85%;
+    }
+
+    h1 {
+      font-family: 'inter';
+      font-weight: 800;
+      font-size: 30px;
+
+
+      span {
+        background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+    }
+
+    p {
+      font-family: 'inter';
+      font-weight: 400;
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .world-image{
+    width: 100%;
+    height: 90%;
+    border: 2px solid red;
+    overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+      height: auto;
+    }
+
+    img{
+      width: 1400px;
+
+      @media only screen and (max-width: 768px) {
+        width: 430px;
+      }
     }
   }
 }
