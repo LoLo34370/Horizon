@@ -1,12 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="contact.css">
+    <title>Horizon Agency - Accueil</title>
+    <link rel="stylesheet" href="sass/contact.css">
+    <link rel="stylesheet" href="contact-dark.css" disabled>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oxygen:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="js/javascript-contact.js"></script>
+
+
+    <!-- Activer les CSS Media Queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
+
 <body>
-    
+
+    <section class="section1">
+        <div class="menu-container">
+            <nav class="nav-principale">
+                <div class="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <a href="index.html">
+                    <img id="logo-séparation" src="asset/accueil/logo-header.webp" alt="Logo"></a>
+                    <img id="logo-séparation2" src="asset/accueil/logo-dark.png" alt="Logo"></a>
+                <div class="separateur"></div>
+                <ul class="navbar-menu">
+                    <li class="right1"><a href="index.html">Accueil</a></li>
+                    <li class="right1"><a href="#">Nos créations</a></li>
+                    <li class="right1 dropdown"><a href="#">Nos services</a>
+                    </li>
+                    <li class="right1"><a href="#">Tarifs</a></li>
+                    <li class="right"><a href="contact.html">Obtenir un devis</a></li>
+                </ul>
+                <input type="checkbox" id="contact-dark" /><label for="contact-dark">Toggle</label>
+            </nav>
+        </div>
+    </section>
+
+    <section class="section2">
+        <h1>Contactez-nous</h1>
+        <p>Utilisez le formulaire ci-dessous pour contacter l'assistance <br>Un représentant vous contactera bientot</p>
+    </section>
+
+    <section class="section3">
+        <div class="global1">
+            <div class="card1">
+                <div class="image">
+                    <img src="asset/contact/logo message.svg" alt="message">
+                </div>
+                <div class="titre1">
+                    <h1>Obtenir de l'aide</h1>
+                    <p>Nous sommes disponibles pour vous aider par e-mail ou par téléphone. Contactez-nous en utilisant
+                        l'une des options ci-dessous.</p>
+                    <em>
+                        <h6>Réponse en moins de 72h</h6>
+                    </em>
+                </div>
+                <div class="CTA1">
+                    <div class="text">
+                        <h2>Appelez-nous</h2>
+                    </div>
+                    <div class="button">
+                        <img src="asset/contact/telephone.svg">
+                        <p>07.43.44.43.24</p>
+                    </div>
+                </div>
+                <p>OU</p>
+                <div class="CTA2">
+                    <div class="text2">
+                        <h2>Ecrivez nous</h2>
+                    </div>
+                    <div class="button2">
+                        <img src="asset/contact/send black.png">
+                        <p>support.horizon@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="image2">
+                    <img id="logo-séparation-footer" src="asset/contact/logo.svg" alt="variante logo">
+                    <img id="logo-séparation2-footer "src="asset/contact/logo-dark.svg" alt="variante logo">
+                </div>
+                <div class="titre2">
+                    <h1>Service commercial</h1>
+                </div>
+                <div class="form">
+                    <div class="name">
+                        <div class="nom">
+                            <h3>Nom</h3>
+                            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+                        </div>
+                        <div class="prename">
+                            <div class="prenom">
+                                <h3>Prénom</h3>
+                                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mail-global">
+                        <div class="mail">
+                            <h3>Votre mail</h3>
+                            <input type="mail" id="mail" name="mail" placeholder="Entrez votre mail" required>
+                        </div>
+                    </div>
+
+                    <div class="message-global">
+                        <div class="message">
+                            <h3>Message : </h3>
+                            <input type="text" id="message" name="message" placeholder="Encrivez votre message"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="last-button">
+                        <div class="button">
+                            <p>Envoyer</p>
+                            <img src="asset/contact/send light.svg">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="logo-footer">
+                <img id="logo-séparation" src="asset/accueil/logo-header.webp">
+                <img id="logo-séparation2" src="asset/accueil/logo-dark.png" alt="Logo"></a>
+                <div class="copyright">
+                    <p>©Nuance Digitale | Tout droits réservé</p>
+                </div>
+            </div>
+            <div class="separateur2"></div>
+            <div class="mapping">
+                <div class="box">
+                    <div class="titre-map">
+                        <h3>Produit</h3>
+                    </div>
+                    <div class="sous-categorie">
+                        <p>Entreprise</p>
+                        <p>Developpement web</p>
+                        <p>marketing digital</p>
+                        <p>Création Graphique</p>
+                        <p>Tarif</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titre-map">
+                        <h3>Ressources</h3>
+                    </div>
+                    <div class="sous-categorie">
+                        <p>Clients</p>
+                        <p>Nos création</p>
+                        <p>Nos outils</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titre-map">
+                        <h3>Entreprise</h3>
+                    </div>
+                    <div class="sous-categorie">
+                        <p>A propos</p>
+                        <p>Sécurité</p>
+                        <p>Contactez-nous</p>
+                        <p>Politique de confidentialité</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titre-map">
+                        <h3>Nos réseaux</h3>
+                    </div>
+                    <div class="container">
+                        <img src="asset/accueil/twitter.png">
+                        <p>Twitter</p>
+                    </div>
+                    <div class="container">
+                        <img src="asset/accueil/insta.png">
+                        <p>Instagram</p>
+                    </div>
+                    <div class="container">
+                        <img src="asset/accueil/facebook.png">
+                        <p>Facebook</p>
+                    </div>
+
+                    <div class="container">
+                        <div class="copyright2">
+                            <p>©Nuance Digitale | Tout droits réservé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>

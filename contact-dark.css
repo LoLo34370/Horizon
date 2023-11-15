@@ -18,24 +18,29 @@
   }
 }
 
-#logo-séparation-footer {
-  display: flex;
-  margin-left: 110px;
-}
-
-#logo-séparation2-footer {
-  display: none;
-}
-
 /* MES MIXINS */
 /* FIN MES MIXINS */
-#logo-séparation {
-  display: flex;
-}
 
 #logo-séparation2 {
+  display: flex;
+  padding-left: 20px;
+}
+
+#logo-séparation {
   display: none;
 }
+
+
+#logo-séparation2-footer {
+  display: flex;
+  padding-left: 20px;
+}
+
+#logo-séparation-footer {
+  display: none;
+}
+
+
 
 .espace {
   margin-top: 500px;
@@ -78,7 +83,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2%;
-  background-color: #FBFCFF;
+  background-color: #262626;
   z-index: 2;
   border-bottom: 1px solid #d9dfed;
   transition: background-color 1s ease-in-out;
@@ -118,7 +123,7 @@ body {
 }
 
 .separateur {
-  border-right: 2px solid black;
+  border-right: 2px solid #fff;
   height: 80px;
   margin-left: 20px;
 }
@@ -148,14 +153,14 @@ body {
   transition: 0.4s ease;
 }
 .nav-principale li.right1:hover {
-  background-color: #EEEEEE;
+  background-color: #36363680;
   border-radius: 5px;
   padding: 10px;
 }
 
 .nav-principale a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   font-family: "Inter";
   font-size: 18px;
   font-weight: 300;
@@ -272,19 +277,20 @@ label:active:after {
   align-items: center;
   gap: 20px;
   text-align: center;
+  background-color: #363636;
   transition: 0.5s ease-in;
 }
 .section2 h1 {
   font-family: "inter";
   font-size: 40px;
   font-weight: 800;
-  color: #000;
+  color: #fff;
 }
 .section2 p {
   font-family: "inter";
   font-size: 20px;
   font-weight: 400;
-  color: #000;
+  color: #fff;
 }
 
 .section3 {
@@ -294,6 +300,7 @@ label:active:after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #262626;
   transition: 0.5s ease-in;
 }
 @media only screen and (max-width: 768px) {
@@ -321,7 +328,7 @@ label:active:after {
   border: 1px solid grey;
   width: 30%;
   height: 90%;
-  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.3137254902);
+  box-shadow: 6px 10px 20px #FFFFFF60;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -361,21 +368,21 @@ label:active:after {
   font-family: "inter";
   font-size: 25px;
   font-weight: 800;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .global1 .titre1 p {
   font-family: "inter";
   font-size: 14px;
   font-weight: 400;
-  color: #000;
+  color: #fff;
   letter-spacing: 1px;
 }
 .section3 .global1 .titre1 h6 {
   font-family: "inter";
   font-size: 14px;
   font-weight: 800;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
   -webkit-text-emphasis: italic;
           text-emphasis: italic;
@@ -400,6 +407,7 @@ label:active:after {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: #FFF;
 }
 .section3 .global1 .CTA1 .button {
   width: 180px;
@@ -432,6 +440,7 @@ label:active:after {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: #FFF;
 }
 .section3 .global1 .CTA2 {
   width: 90%;
@@ -452,6 +461,7 @@ label:active:after {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: #FFF;
 }
 .section3 .global1 .CTA2 .button2 {
   width: 180px;
@@ -482,7 +492,7 @@ label:active:after {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0px;
-  color: #000;
+  color: #fff;
 }
 .section3 .card2 .image2 {
   display: flex;
@@ -504,7 +514,7 @@ label:active:after {
   font-family: "inter";
   font-size: 25px;
   font-weight: 800;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .card2 .name {
@@ -525,14 +535,14 @@ label:active:after {
   font-family: "inter";
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .card2 .name .nom #nom {
   border: 1px solid grey;
   padding: 10px;
   border-radius: 8px;
-  background-color: #FBFCFF;
+  background-color: #363636;
 }
 .section3 .card2 .name .prename {
   width: 90%;
@@ -554,14 +564,14 @@ label:active:after {
   font-family: "inter";
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .card2 .name .prename .prenom #prenom {
   border: 1px solid grey;
   padding: 10px;
   border-radius: 8px;
-  background-color: #FBFCFF;
+  background-color: #363636;
 }
 .section3 .card2 .mail-global {
   width: 90%;
@@ -582,14 +592,14 @@ label:active:after {
   font-family: "inter";
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .card2 .mail-global .mail #mail {
   border: 1px solid grey;
   padding: 10px;
   border-radius: 8px;
-  background-color: #FBFCFF;
+  background-color: #363636;
 }
 .section3 .card2 .message-global {
   width: 90%;
@@ -610,14 +620,14 @@ label:active:after {
   font-family: "inter";
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   letter-spacing: 2px;
 }
 .section3 .card2 .message-global .message #message {
   border: 1px solid grey;
   padding: 10px 10px 50px 10px;
   border-radius: 8px;
-  background-color: #FBFCFF;
+  background-color: #363636;
 }
 .section3 .form {
   width: 90%;
@@ -664,14 +674,14 @@ label:active:after {
   padding: 0px 20px;
   justify-content: center;
   align-items: center;
-  background-color: rgba(221, 234, 240, 0.1882352941);
-  border-top: 2px solid black;
+  background-color: #363636;
+  border-top: 2px solid #fff;
   padding-top: 20px;
 }
 @media only screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
-    height: auto;
+    height: auto; 
   }
 }
 .footer .logo-footer {
@@ -703,12 +713,12 @@ label:active:after {
   font-family: "inter";
   font-weight: 200;
   font-size: 10px;
-  color: #999999;
+  color: #fff;
 }
 .footer .separateur2 {
   width: 0%;
   height: 90%;
-  border-left: 3px solid black;
+  border-left: 3px solid #fff;
 }
 @media only screen and (max-width: 768px) {
   .footer .separateur2 {
@@ -763,6 +773,7 @@ label:active:after {
   font-weight: 700;
   letter-spacing: 3px;
   font-size: 22px;
+  color: #fff;
 }
 .footer .mapping .box .sous-categorie {
   width: 90%;
@@ -775,6 +786,7 @@ label:active:after {
   font-family: "inter";
   font-weight: 400;
   font-size: 15px;
+  color: #fff;
 }
 .footer .mapping .container {
   width: 80%;
@@ -797,6 +809,7 @@ label:active:after {
   font-family: "inter";
   font-weight: 400;
   font-size: 15px;
+  color: #fff;
 }
 .footer .mapping .container .copyright2 {
   display: none;
