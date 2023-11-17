@@ -89,7 +89,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid red;
 
     h1 {
         font-family: "inter";
@@ -117,7 +116,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 
     @media only screen and (max-width:768px){
         height: 930px;
@@ -131,7 +129,6 @@ body {
         gap: 50px;
         justify-content: center;
         align-items: center;
-        border: 1px solid blue;
 
         @media only screen and (max-width:768px){
             flex-direction: column;
@@ -141,7 +138,6 @@ body {
         .image {
             width: 40%;
             height: 80%;
-            border: 1px solid green;
 
             @media only screen and (max-width:768px){
                 width: 90%;
@@ -161,7 +157,6 @@ body {
             flex-direction: column;
             gap: 30px;
             justify-content: center;
-            border: 1px solid yellow;
 
             @media only screen and (max-width:768px){
                 width: 90%;
@@ -206,7 +201,6 @@ body {
             align-items: center;
             @include fond-vert();
             transition: 0.3s ease-in-out;
-            border: 2px solid magenta;
 
             &:hover{
                 transform: scale(0.9);
