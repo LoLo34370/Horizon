@@ -119,6 +119,12 @@
             font-family: 'inter';
             font-weight: 400;
             font-size: 15px;
+
+            &:hover{
+              cursor: pointer;
+              transform: scale(0.95);
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -146,6 +152,12 @@
           font-family: 'inter';
           font-weight: 400;
           font-size: 15px;
+
+          &:hover{
+            cursor: pointer;
+            transform: scale(0.95);
+            text-decoration: underline;
+          }
         }
   
         .copyright2 {

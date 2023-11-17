@@ -1064,6 +1064,11 @@ label:active:after {
   font-weight: 400;
   font-size: 15px;
 }
+.footer .mapping .box .sous-categorie p:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  text-decoration: underline;
+}
 .footer .mapping .container {
   width: 80%;
   height: 50px;
@@ -1085,6 +1090,11 @@ label:active:after {
   font-family: "inter";
   font-weight: 400;
   font-size: 15px;
+}
+.footer .mapping .container p:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  text-decoration: underline;
 }
 .footer .mapping .container .copyright2 {
   display: none;
