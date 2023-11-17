@@ -1,0 +1,1685 @@
+@charset "UTF-8";
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+@media only screen and (max-width: 768px) {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+#logo-séparation2 {
+  display: flex;
+  padding-left: 10px;
+}
+
+#logo-séparation {
+  display: none;
+}
+
+.espace {
+  margin-top: 500px;
+}
+
+/* MES MIXINS */
+/* FIN MES MIXINS */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 3;
+  top: 2%;
+}
+@media only screen and (max-width: 768px) {
+  .menu-container {
+    width: 100%;
+  }
+}
+
+.nav-principale {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2%;
+  background-color: #262626;
+  z-index: 2;
+  border-bottom: 1px solid #d9dfed;
+  transition: background-color 1s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale {
+    padding: 0.5em 2em;
+    flex-direction: row;
+    height: 70px;
+    gap: 10px;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #FFF;
+  margin-bottom: 5px;
+}
+
+.nav-principale img {
+  padding-left: 11%;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 37px;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale img {
+    width: 100px;
+    height: 16px;
+    margin-left: 60px;
+  }
+}
+
+.separateur {
+  border-right: 2px solid #FFF;
+  height: 80px;
+  margin-left: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .separateur {
+    display: none;
+  }
+}
+
+.nav-principale ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale ul {
+    display: none;
+    margin-left: 0px;
+  }
+}
+
+.nav-principale li.right1 {
+  margin-left: 1.5rem;
+  margin-right: 2em;
+  padding: 10px;
+  transition: 0.4s ease;
+}
+.nav-principale li.right1:hover {
+  background-color: #363636;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-principale a {
+  text-decoration: none;
+  color: #FFF;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 300;
+}
+@media only screen and (max-width: 768px) {
+  .nav-principale a {
+    font-size: 14px;
+  }
+}
+
+/* bouton header */
+.right {
+  margin-left: 8.5rem;
+  transition: transform 0.4s ease-out;
+}
+.right a {
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  padding: 15px 30px;
+  color: white !important;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.right:hover {
+  transform: scale(0.9);
+  transition: 0.4s ease;
+}
+
+/* FIN bouton header */
+@media only screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-menu.show {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 300px;
+    margin-top: 370px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(217, 223, 237, 0.4392156863);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 7px;
+  }
+  .right {
+    display: flex;
+    margin: 0rem 0.5rem;
+  }
+}
+/* bouton DARKMODE */
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  /* permet de cacher le carré dégeulasse */
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  /* cache le texte du label */
+  width: 60px;
+  height: 26px;
+  background: none;
+  border: 1px solid black;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  rotate: 90deg;
+  margin-left: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  label {
+    rotate: none;
+  }
+}
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 90px;
+  transition: 0.4s;
+}
+
+input:checked + label {
+  background: #fff;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 50px;
+  /* permet de faire l'effet sur la boule de couleur quand tu clique dessus et qu'elle se déforme */
+}
+
+/* FIN bouton DARKMODE */
+.section2 {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #363636;
+  padding-bottom: 80px;
+  transition: 0.3s ease;
+}
+.section2 h1 {
+  font-family: "inter";
+  font-size: 30px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 50px;
+  color: #FFF;
+}
+.section2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  color: #FFF;
+}
+.section2 .global1 {
+  width: 90%;
+  height: 95%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.section2 .global1 .card1 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(95deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section2 .global1 .card1:hover {
+  transform: scale(1.03);
+}
+.section2 .global1 .card1 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .global1 .card1 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .global1 .card1 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .global1 .card1 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .global1 .card1 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .global1 .card1 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .global1 .card1 .part1 .parent .competence img {
+  width: 20px;
+}
+.section2 .global1 .card1 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 .global1 .card1 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .global1 .card1 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .global1 .card1 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .global1 .card1 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .global1 .card1 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .global1 .card1 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .global1 .card1 .part2 .parent .competence img {
+  width: 20px;
+}
+.section2 .global1 .card1 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 .global1 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section2 .global1 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+.section2 .card2 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(295deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section2 .card2:hover {
+  transform: scale(1.03);
+}
+.section2 .card2 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .card2 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .card2 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .card2 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .card2 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .card2 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .card2 .part1 .parent .competence img {
+  width: 20px;
+}
+.section2 .card2 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 .card2 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .card2 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .card2 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .card2 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .card2 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .card2 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .card2 .part2 .parent .competence img {
+  width: 20px;
+}
+.section2 .card2 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section2 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+.section2 .card3 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(95deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section2 .card3:hover {
+  transform: scale(1.03);
+}
+.section2 .card3 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .card3 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .card3 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .card3 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .card3 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .card3 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .card3 .part1 .parent .competence img {
+  width: 20px;
+}
+.section2 .card3 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 .card3 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 .card3 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section2 .card3 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(95deg, #1AF1FF 25.23%, rgba(73, 44, 255, 0.92) 95.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section2 .card3 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section2 .card3 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section2 .card3 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section2 .card3 .part2 .parent .competence img {
+  width: 20px;
+}
+.section2 .card3 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section2 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(340deg, #1AF1FF -12%, rgba(73, 44, 255, 0.92) 157.33%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section2 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.section3 {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #262626;
+  padding-bottom: 80px;
+}
+.section3 h1 {
+  font-family: "inter";
+  font-size: 30px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 50px;
+  color: #FFF;
+}
+.section3 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  color: #FFF;
+}
+.section3 .global1 {
+  width: 90%;
+  height: 95%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.section3 .global1 .card1 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #363636;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+
+}
+.section3 .global1 .card1:hover {
+  transform: scale(1.03);
+}
+.section3 .global1 .card1 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section3 .global1 .card1 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section3 .global1 .card1 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 .global1 .card1 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section3 .global1 .card1 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section3 .global1 .card1 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section3 .global1 .card1 .part1 .parent .competence img {
+  width: 20px;
+}
+.section3 .global1 .card1 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section3 .global1 .card1 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section3 .global1 .card1 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section3 .global1 .card1 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 .global1 .card1 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section3 .global1 .card1 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section3 .global1 .card1 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section3 .global1 .card1 .part2 .parent .competence img {
+  width: 20px;
+}
+.section3 .global1 .card1 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section3 .global1 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section3 .global1 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+.section3 .card2 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #363636;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section3 .card2:hover {
+  transform: scale(1.03);
+}
+.section3 .card2 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section3 .card2 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section3 .card2 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 .card2 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section3 .card2 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section3 .card2 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section3 .card2 .part1 .parent .competence img {
+  width: 20px;
+}
+.section3 .card2 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section3 .card2 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section3 .card2 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section3 .card2 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 .card2 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section3 .card2 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section3 .card2 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section3 .card2 .part2 .parent .competence img {
+  width: 20px;
+}
+.section3 .card2 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section3 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section3 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.card3 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #363636;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.card3:hover {
+  transform: scale(1.03);
+}
+.card3 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.card3 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.card3 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card3 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.card3 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.card3 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.card3 .part1 .parent .competence img {
+  width: 20px;
+}
+.card3 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.card3 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.card3 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.card3 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card3 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.card3 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.card3 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.card3 .part2 .parent .competence img {
+  width: 20px;
+}
+.card3 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+
+button {
+  padding: 3%;
+  border-radius: 7px;
+  background: linear-gradient(96deg, #ED1AFF 5.69%, rgba(255, 208, 44, 0.92) 80.11%);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.section4 {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#363636;
+  padding-bottom: 80px;
+  color: #FFF;
+
+}
+.section4 h1 {
+  font-family: "inter";
+  font-size: 30px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 50px;
+}
+.section4 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .global1 {
+  width: 90%;
+  height: 95%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.section4 .global1 .card1 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: var(--vert, linear-gradient(103deg, #FFE81A -66.54%, rgba(60, 255, 44, 0.92) 156.2%));
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section4 .global1 .card1:hover {
+  transform: scale(1.03);
+}
+.section4 .global1 .card1 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .global1 .card1 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .global1 .card1 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .global1 .card1 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .global1 .card1 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .global1 .card1 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .global1 .card1 .part1 .parent .competence img {
+  width: 20px;
+}
+.section4 .global1 .card1 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 .global1 .card1 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .global1 .card1 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .global1 .card1 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .global1 .card1 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .global1 .card1 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .global1 .card1 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .global1 .card1 .part2 .parent .competence img {
+  width: 20px;
+}
+.section4 .global1 .card1 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 .global1 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section4 .global1 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+.section4 .card2 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: var(--vert, linear-gradient(103deg, #FFE81A -66.54%, rgba(60, 255, 44, 0.92) 156.2%));
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section4 .card2:hover {
+  transform: scale(1.03);
+}
+.section4 .card2 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .card2 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .card2 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .card2 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .card2 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .card2 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .card2 .part1 .parent .competence img {
+  width: 20px;
+}
+.section4 .card2 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 .card2 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .card2 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .card2 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .card2 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .card2 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .card2 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .card2 .part2 .parent .competence img {
+  width: 20px;
+}
+.section4 .card2 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section4 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+.section4 .card3 {
+  border: 2px solid transparent;
+  /* Couleur de la bordure initiale (transparente) */
+  border-image: var(--vert, linear-gradient(103deg, #FFE81A -66.54%, rgba(60, 255, 44, 0.92) 156.2%));
+  border-image-slice: 1;
+  /* Pour rendre le dégradé visible sur toute la bordure */
+  width: 33%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s ease;
+  padding: 20px 0px;
+  color: #FFF;
+  background-color: #262626;
+  box-shadow: 5px 8px 15px #FFFFFF50;
+}
+.section4 .card3:hover {
+  transform: scale(1.03);
+}
+.section4 .card3 .part1 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .card3 .part1 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .card3 .part1 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .card3 .part1 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .card3 .part1 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .card3 .part1 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .card3 .part1 .parent .competence img {
+  width: 20px;
+}
+.section4 .card3 .part1 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 .card3 .part2 {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.section4 .card3 .part2 h2 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+}
+.section4 .card3 .part2 h3 {
+  font-family: "inter";
+  font-size: 23px;
+  font-weight: 800;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section4 .card3 .part2 h3 span {
+  color: #000;
+  font-weight: 300;
+  font-size: 10px;
+}
+.section4 .card3 .part2 .parent {
+  display: flex;
+  flex-direction: column;
+}
+.section4 .card3 .part2 .parent .competence {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: left;
+  align-items: center;
+  margin-top: 20px;
+}
+.section4 .card3 .part2 .parent .competence img {
+  width: 20px;
+}
+.section4 .card3 .part2 .parent .competence p {
+  font-family: "inter";
+  font-size: 15px;
+  font-weight: 300;
+}
+.section4 button {
+  padding: 3%;
+  border-radius: 7px;
+  background: var(--vert, linear-gradient(103deg, #FFE81A -6.54%, rgba(60, 255, 44, 0.92) 106.2%));
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+.section4 button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #363636;
+  border-top: 2px solid #FFF;
+  padding-top: 20px;
+  color: #FFF;
+}
+@media only screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+  }
+}
+.footer .logo-footer {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .logo-footer img {
+  width: 300px;
+  margin-top: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .footer .logo-footer img {
+    margin-top: 0px;
+  }
+}
+.footer .logo-footer .copyright {
+  margin-top: auto;
+}
+@media only screen and (max-width: 768px) {
+  .footer .logo-footer .copyright {
+    display: none;
+  }
+}
+.footer .logo-footer .copyright p {
+  font-family: "inter";
+  font-weight: 200;
+  font-size: 10px;
+  color: #999999;
+}
+.footer .separateur2 {
+  width: 0%;
+  height: 90%;
+  border-left: 3px solid #fff;
+}
+@media only screen and (max-width: 768px) {
+  .footer .separateur2 {
+    width: 100%;
+    border-bottom: 2px solid black;
+  }
+}
+.footer .mapping {
+  width: 70%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer .mapping .box {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping .box {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+.footer .mapping .box .titre-map {
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping .box .titre-map {
+    justify-content: center;
+  }
+}
+.footer .mapping .box .titre-map h3 {
+  font-family: "inter";
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 22px;
+}
+.footer .mapping .box .sous-categorie {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .mapping .box .sous-categorie p {
+  font-family: "inter";
+  font-weight: 400;
+  font-size: 15px;
+}
+.footer .mapping .container {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping .container {
+    justify-content: center;
+  }
+}
+.footer .mapping .container img {
+  width: 38px;
+  height: 38px;
+}
+.footer .mapping .container p {
+  font-family: "inter";
+  font-weight: 400;
+  font-size: 15px;
+}
+.footer .mapping .container .copyright2 {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping .container .copyright2 {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .footer .mapping .container .copyright2 p {
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=tarif.css.map */
